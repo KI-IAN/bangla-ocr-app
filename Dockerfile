@@ -18,7 +18,7 @@ WORKDIR /app
 COPY requirements.txt app.py ./
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install -r requirements.txt
 
 # Expose Gradio app
 CMD ["python", "app.py"]
