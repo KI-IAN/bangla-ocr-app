@@ -1,6 +1,5 @@
-FROM python:3.10
+FROM python:3.10-slim
 
-# Install system dependencies (expanded)
 RUN apt-get update && apt-get install -y \
     build-essential \
     gcc \
@@ -11,14 +10,11 @@ RUN apt-get update && apt-get install -y \
     libxrender-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
 WORKDIR /app
-
-# Copy files
 COPY requirements.txt app.py ./
 
-# Install Python dependencies
-RUN pip install -r requirements.txt
+# Install torch first using the official PyTorch repo for CPU
+RUN pip install --no-cache-dir torch==2.0.1 torchvision==0.15.2 --index-url https://download.pytorch.org/whl/cpu
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose Gradio app
 CMD ["python", "app.py"]
