@@ -1,0 +1,5 @@
+gradio==5.42.0
+easyocr==1.7.2
+torch==2.0.1
+opencv-python-headless==4.8.0.76
+numpy==1.26.4
