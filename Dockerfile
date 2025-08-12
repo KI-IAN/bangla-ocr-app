@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.0.1-cpu
+FROM docker.io/pytorch/pytorch
 
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
