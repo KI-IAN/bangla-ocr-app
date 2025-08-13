@@ -5,7 +5,7 @@ from PIL import Image
 import time
 
 # Load EasyOCR reader with Bangla support
-reader = easyocr.Reader(['bn'], gpu=True)
+reader = easyocr.Reader(['bn', 'en'], gpu=True)
 
 def ocr_image(image):
     if image is None:
