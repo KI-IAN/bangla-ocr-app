@@ -27,8 +27,7 @@ This project is a lightweight Optical Character Recognition (OCR) web applicatio
 
 ## 🔗 Live Demo
 
-Try it out here: **[Gradio Hosted App](https://your-demo-link.com)**  
-*(Note: Replace with your actual Gradio or other hosted link.)*
+Try it out here: **[Bangla OCR Demo App](https://huggingface.co/spaces/frkhan/bangla-ocr)**  
 
 ---
 
