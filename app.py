@@ -3,9 +3,13 @@ import easyocr
 import numpy as np
 from PIL import Image
 import time
+from pathlib import Path
 
-# Load EasyOCR reader with Bangla support
-reader = easyocr.Reader(['bn', 'en'], gpu=True)
+# Define a safe, relative model directory
+model_dir = Path(__file__).parent / ".EasyOCR"
+model_dir.mkdir(parents=True, exist_ok=True)
+
+reader = easyocr.Reader(['bn', 'en'], gpu=True, model_storage_directory=str(model_dir))
 
 def ocr_image(image):
     if image is None:
