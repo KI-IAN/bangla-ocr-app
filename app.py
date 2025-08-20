@@ -5,11 +5,14 @@ from PIL import Image
 import time
 from pathlib import Path
 
-# Define a safe, relative model directory
-model_dir = Path(__file__).parent / ".EasyOCR"
+from pathlib import Path
+
+# Use home directory for model storage
+model_dir = Path.home() / ".EasyOCR"
 model_dir.mkdir(parents=True, exist_ok=True)
 
 reader = easyocr.Reader(['bn', 'en'], gpu=True, model_storage_directory=str(model_dir))
+
 
 def ocr_image(image):
     if image is None:
