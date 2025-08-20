@@ -8,7 +8,7 @@ from pathlib import Path
 from pathlib import Path
 
 # Use home directory for model storage
-model_dir = Path("/tmp/.EasyOCR")
+model_dir = Path("/app/models")
 model_dir.mkdir(parents=True, exist_ok=True)
 
 reader = easyocr.Reader(['bn', 'en'], gpu=True, model_storage_directory=str(model_dir))
