@@ -1,3 +1,14 @@
+---
+title: Bangla OCR Web App
+emoji: 🧠
+colorFrom: indigo
+colorTo: pink
+sdk: gradio
+sdk_version: "5.42.0"
+app_file: app.py
+pinned: false
+---
+
 # 🇧🇩 Bangla OCR Web App with Gradio & EasyOCR
 
 This project is a lightweight Optical Character Recognition (OCR) web application built using [Gradio](https://www.gradio.app/) and [EasyOCR](https://github.com/JaidedAI/EasyOCR). It allows users to upload images containing Bangla or English text and extract it instantly through a simple browser interface. Designed for fast deployment and minimal setup, it runs locally, in Docker, or via Docker Compose.
