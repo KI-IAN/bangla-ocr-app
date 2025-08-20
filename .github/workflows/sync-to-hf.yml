@@ -3,7 +3,7 @@ name: Sync to Hugging Face Spaces
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   sync-to-hub:
