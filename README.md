@@ -54,20 +54,44 @@ You can run the app in three different ways:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/bangla-ocr-app.git
+    git clone https://github.com/KI-IAN/bangla-ocr-app
     cd bangla-ocr-app
     ```
 
-2.  **Install dependencies:**
+2.  **Create and activate a virtual environment:** A virtual environment isolates the project's dependencies from your system's global Python packages.
+
+    ```bash
+    # Create the virtual environment (you only need to do this once per project)
+    # On some systems, you might need to use `python3` instead of `python`
+    python -m venv venv
+    ```
+
+    Next, activate the environment. The command depends on your operating system:
+
+    *   **On Windows (Command Prompt / PowerShell):**
+        ```bash
+        venv\Scripts\activate
+        ```
+
+    *   **On macOS / Linux (bash, zsh, etc.):**
+        ```bash
+        source venv/bin/activate
+        ```
+    *Your terminal prompt should now change to show `(venv)` at the beginning.*
+
+3.  **Install dependencies:** With the virtual environment active, install the required packages.
     ```bash
     pip install -r requirements.txt
     ```
 
-3.  **Launch the app:**
+4.  **Launch the app:**
     ```bash
     python app.py
     ```
-    The app will be running at `http://127.0.0.1:7860`.
+
+The app will be running at `http://127.0.0.1:7860`.
+
+*(When you're finished, you can leave the virtual environment by simply running the `deactivate` command.)*
 
 ### 🐳 Option 2: Docker
 
