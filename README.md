@@ -3,10 +3,8 @@ title: Bangla OCR Web App
 emoji: 🧠
 colorFrom: indigo
 colorTo: pink
-sdk: gradio
-sdk_version: 5.46.1
-app_file: app.py
-pinned: false
+sdk: docker
+app_port: 7860
 ---
 
 # 🇧🇩 Bangla OCR Web App with Gradio & EasyOCR
