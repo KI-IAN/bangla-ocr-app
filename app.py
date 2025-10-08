@@ -11,11 +11,18 @@ import gradio as gr
 import easyocr
 import numpy as np
 import time
+import os
 from pathlib import Path
 from langfuse import observe
 
-# Use home directory for model storage
-model_dir = Path("/tmp/easyocr_models")
+# Dynamically set model directory based on the environment
+if 'SPACE_ID' in os.environ:
+    # Use /tmp for Hugging Face Spaces, as it's a writable directory
+    model_dir = Path("/tmp/easyocr_models")
+else:
+    # Use a local directory for Docker and local development
+    model_dir = Path("/app/easyocr_models")
+
 model_dir.mkdir(parents=True, exist_ok=True)
 
 reader = easyocr.Reader(['bn', 'en'], gpu=False, model_storage_directory=str(model_dir))
