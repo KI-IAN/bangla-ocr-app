@@ -4,18 +4,18 @@ FROM python:3.10-slim-bookworm
 # Set the working directory in the container
 WORKDIR /app
 
-# Upgrade system packages to patch vulnerabilities
-RUN apt-get update && apt-get upgrade -y && apt-get clean
+# Prevent python from writing pyc files to disc and buffer logs
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
 # Copy only the requirements file to leverage Docker cache
+# This is the layer that takes a long time, but it will be cached after the first build.
 COPY requirements.txt .
 
 # Install dependencies
 # Using --no-cache-dir reduces image size
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the application code
-COPY . .
+RUN pip install -r requirements.txt
 
 # Command to run the application
+# The CMD will run the app from the volume mounted by docker-compose
 CMD ["python", "app.py"]

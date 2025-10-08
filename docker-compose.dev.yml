@@ -3,12 +3,13 @@ services:
   bangla-ocr-app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     container_name: bangla-ocr-app
     ports:
       - "12300:7860"
     volumes:
-      - ./easyocr_models:/app/easyocr_models
+      - .:/app  # Mount the entire project directory for live code reloading
+      - ./easyocr_models:/app/easyocr_models # Persist downloaded OCR models
     environment:
       - LANGFUSE_PUBLIC_KEY=${LANGFUSE_PUBLIC_KEY}  # Load this key from .env in local/dev environment
       - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY}  # Load this key from .env in local/dev environment

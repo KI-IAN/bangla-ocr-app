@@ -22,4 +22,8 @@ docker-compose.override.yml
 .DS_Store
 Thumbs.db
 .EasyOCR/bengali.pth
+.EasyOCR/english.pth
 .EasyOCR/craft_mlt_25k.pth
+
+# Persisted EasyOCR models from Docker volume
+easyocr_models/
