@@ -15,7 +15,7 @@ from pathlib import Path
 from langfuse import observe
 
 # Use home directory for model storage
-model_dir = Path("/app/easyocr_models")
+model_dir = Path("/tmp/easyocr_models")
 model_dir.mkdir(parents=True, exist_ok=True)
 
 reader = easyocr.Reader(['bn', 'en'], gpu=False, model_storage_directory=str(model_dir))
